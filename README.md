@@ -12,19 +12,21 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 ### SpatialVLA
 - **Paper**: https://arxiv.org/abs/2501.15830
 - **Status**: ✅ Successfully reproduced the results in the paper
+- Code is very clean.
 
 ### OpenVLA-OFT
 - **Website**: https://openvla-oft.github.io
 - **Status**: ✅ Successfully reproduced the results in the paper
 
-There are hundreds of VLA models, I only list my reproduced models.
+There are hundreds of VLA models, Here only list the models that I have tested. 
 
 ## Benchmarks
 
 ### ✅ Tested Benchmarks
 - **LIBERO**
+  - https://libero-project.github.io/main.html
   - Reference: https://github.com/moojink/openvla-oft/blob/main/experiments/robot/libero/run_libero_eval.py
-- **SimplerEnv**
+- **SimplerEnv**   https://github.com/DelinQu/SimplerEnv-OpenVLA , this repo has more scripts and utilities to help you run the benchmark.
 
 ### 🔄 Benchmarks to Try
 - **RLBench**: 
@@ -53,9 +55,9 @@ There are hundreds of VLA models, I only list my reproduced models.
 1.2T    ./fmb_dataset
 126G    ./taco_play
 128G    ./bc_z
-124G    ./bridge_orig
+124G    ./bridge_orig    2.1M samples
 140G    ./furniture_bench_dataset_converted_externally_to_rlds
-98G     ./fractal20220817_data
+98G     ./fractal20220817_data     3.78M samples
 70G     ./kuka
 22G     ./dobbe
 20G     ./berkeley_autolab_ur5
@@ -84,16 +86,16 @@ There are hundreds of VLA models, I only list my reproduced models.
 - **RoboTwin**: 
   - Repository: https://github.com/robotwin-Platform/RoboTwin
 - Droid
-  - https://droid-dataset.github.io/  
+  - https://droid-dataset.github.io/   1.7TB
 
 ## Contributing
 
 We welcome contributions! Please feel free to:
 - Add new VLA models you've tested
-- Share benchmark results
+- Share benchmark that is easy to use
 - Report dataset experiences
 - Submit pull requests or issues
 
 ## Contact
 
-Feel free to send us pull requests, issues, or email [1263810658@qq.com] to share your reproduction experience!
+Feel free to send us pull requests, issues, or [email](mailto:1263810658@qq.com) to share your reproduction experience!
