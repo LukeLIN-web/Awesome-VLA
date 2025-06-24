@@ -12,21 +12,67 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 ### SpatialVLA
 - **Paper**: https://arxiv.org/abs/2501.15830
 - **Status**: ✅ Successfully reproduced the results in the paper
-- Code is very clean.
+- **Notes**: Code is very clean. using PaliGemma 3B LLM, tokenizer bin action head.
+
+--- 
 
 ### OpenVLA-OFT
 - **Website**: https://openvla-oft.github.io
 - **Status**: ✅ Successfully reproduced the results in the paper
+- **Notes**: using llama2-7B LLM, mlp or diffusion action head.
 
-There are hundreds of VLA models, Here only list the models that I have tested. 
+---
+
+### Pi0
+
+- Achieves ~94% average accuracy on the LIBERO benchmark.  
+  [Reference](https://github.com/SpatialVLA/SpatialVLA/issues/5#issuecomment-2668021101)  
+- **Model details**: Uses **PaliGemma-3B** as the LLM and **DiT** for the action head.
+
+#### Real-world observations
+
+1. Performs well with only **80 samples**, fine-tuned on **A100**.
+2. Scales with **3–4k high-quality samples**. Successful fine-tuning on  
+   [Hugging Face model](https://huggingface.co/lerobot/pi0) using:
+   - **bf16**
+   - **batch size = 12**
+   - **~70GB VRAM**
+   - **multi-machine** setup
+   - **DeepSpeed ZeRO-2** (no offloading)  
+   Training from scratch fails when data is limited.
+3. `pi0-fast` variant works effectively in this [paper](https://arxiv.org/pdf/2506.09937).  
+   Project site: [Physical Intelligence – pi0-fast](https://www.physicalintelligence.company/research/fast)
+
+---
+
+### ACT
+
+- **Paper**: [ACT: Adaptive Curriculum for Robot Policy Learning](https://arxiv.org/abs/2304.13705)  
+- **Note**: Can produce smooth grasping behavior with as few as **70 demonstrations**.
+
+---
+
+### Diffusion Policy
+
+- GitHub: [real-stanford/diffusion_policy](https://github.com/real-stanford/diffusion_policy)  
+- Works effectively in this [paper](https://www.arxiv.org/pdf/2506.16211)
+
+
+
+
+
+---
+
+*Note: There are hundreds of VLA models available. This list focuses on models that I have personally tested or for which reproduction results have been reported somewhere.*
 
 ## Benchmarks
 
 ### ✅ Tested Benchmarks
 - **LIBERO**
-  - https://libero-project.github.io/main.html
-  - Reference: https://github.com/moojink/openvla-oft/blob/main/experiments/robot/libero/run_libero_eval.py
-- **SimplerEnv**   https://github.com/DelinQu/SimplerEnv-OpenVLA , this repo has more scripts and utilities to help you run the benchmark.
+  - **Website**: https://libero-project.github.io/main.html
+  - **Reference**: https://github.com/moojink/openvla-oft/blob/main/experiments/robot/libero/run_libero_eval.py
+- **SimplerEnv**
+  - **Enhanced Repository**: https://github.com/DelinQu/SimplerEnv-OpenVLA , This repository provides additional scripts and utilities to help you run the benchmark
 
 ### 🔄 Benchmarks to Try
 - **RLBench**: 
@@ -55,9 +101,9 @@ There are hundreds of VLA models, Here only list the models that I have tested.
 1.2T    ./fmb_dataset
 126G    ./taco_play
 128G    ./bc_z
-124G    ./bridge_orig    2.1M samples
+124G    ./bridge_orig                                            # 2.1M samples
 140G    ./furniture_bench_dataset_converted_externally_to_rlds
-98G     ./fractal20220817_data     3.78M samples
+98G     ./fractal20220817_data                               # 3.78M samples
 70G     ./kuka
 22G     ./dobbe
 20G     ./berkeley_autolab_ur5
@@ -85,8 +131,9 @@ There are hundreds of VLA models, Here only list the models that I have tested.
   - Size: ~1.1TB
 - **RoboTwin**: 
   - Repository: https://github.com/robotwin-Platform/RoboTwin
-- Droid
-  - https://droid-dataset.github.io/   1.7TB
+- **Droid**
+  - **Website**: https://droid-dataset.github.io/
+  - **Size**: ~1.7TB
 
 ## Contributing
 
