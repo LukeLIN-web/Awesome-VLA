@@ -36,7 +36,7 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
    [Hugging Face model](https://huggingface.co/lerobot/pi0) using:
    - **bf16**
    - **batch size = 12**
-   - **~70GB VRAM**
+   - **~70GB VRAM** , 8h100, 15 hours.
    - **multi-machine** setup
    - **DeepSpeed ZeRO-2** (no offloading)  
    Training from scratch fails when data is limited.
@@ -55,10 +55,23 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 ### Diffusion Policy
 
 - GitHub: [real-stanford/diffusion_policy](https://github.com/real-stanford/diffusion_policy)  
-- Works effectively in this [paper](https://www.arxiv.org/pdf/2506.16211)
+- Works effectively in this [paper](https://www.arxiv.org/pdf/2506.16211). Case2: use 30 trajectories to train the model, train 30 hours on 4090 gpu and get high success rate.
 
 
 
+### SmolVLA
+
+- **Paper**: https://arxiv.org/abs/2506.01844
+- Successfully tested 450M checkpoint on Lerobot SO101 for real-world fork picking tasks. Training parameters: batch size 12, 4.1GB VRAM usage, converges between 3,000-27,000 steps.
+
+
+### GR00T N1.5
+
+- **Paper**: https://arxiv.org/abs/2503.14734 
+- **Blog**: https://research.nvidia.com/labs/gear/gr00t-n1_5/   
+- **Status**: ✅ Successfully reproduced robocasa results.
+- **Notes**: using 3B LLM, flow matching DiT action head.
+- **Github**: https://github.com/NVIDIA/Isaac-GR00T
 
 
 ---
@@ -70,9 +83,13 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 ### ✅ Tested Benchmarks
 - **LIBERO**
   - **Website**: https://libero-project.github.io/main.html
-  - **Reference**: https://github.com/moojink/openvla-oft/blob/main/experiments/robot/libero/run_libero_eval.py
+  - **Reference**: https://github.com/LukeLIN-web/vote/blob/main/experiments/robot/libero/run_libero_eval.py 
 - **SimplerEnv**
   - **Enhanced Repository**: https://github.com/DelinQu/SimplerEnv-OpenVLA , This repository provides additional scripts and utilities to help you run the benchmark
+
+- **RoboCasa**: 
+  - Paper: https://arxiv.org/abs/2406.02523v1
+  - Repository: https://github.com/robocasa/robocasa , https://github.com/robocasa/robocasa-gr1-tabletop-tasks 
 
 ### 🔄 Benchmarks to Try
 - **RLBench**: 
@@ -83,9 +100,7 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
   - Website: https://meta-world.github.io/
 - **RoboTwin**: 
   - Repository: https://github.com/robotwin-Platform/RoboTwin
-- **RoboCasa**: 
-  - Paper: https://arxiv.org/abs/2406.02523v1
-  - Repository: https://github.com/robocasa/robocasa
+
 
 ## Datasets
 
@@ -125,15 +140,24 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 110M    ./ucsd_kitchen_dataset_converted_externally_to_rlds
 ```
 
+####  GR00T Teleop Simulation Dataset 
+
+- **Website**: https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-Teleop-Sim
+- **Notes**: 1000 teleoperation trajectories for each of the 24 tabletop tasks. Total data storage (HDF5 format): ~14GB, Total data storage (LeRobot-style dataset): ~39GB
+
+
+#### Droid
+- **Website**: https://droid-dataset.github.io/
+- **Notes**: 1.7TB dataset of 1000+ teleop sessions with 100+ unique tasks.
+
+
 ### 🔄 Datasets to Try
 - **CALVIN**: 
   - Repository: https://github.com/mees/calvin
   - Size: ~1.1TB
 - **RoboTwin**: 
   - Repository: https://github.com/robotwin-Platform/RoboTwin
-- **Droid**
-  - **Website**: https://droid-dataset.github.io/
-  - **Size**: ~1.7TB
+
 
 ## Contributing
 
