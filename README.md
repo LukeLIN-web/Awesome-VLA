@@ -21,7 +21,6 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 - **Status**: ✅ Successfully reproduced the results in the paper
 - **Notes**: using llama2-7B LLM, mlp or diffusion action head.
 
----
 
 ### Pi0
 
@@ -57,13 +56,14 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 - GitHub: [real-stanford/diffusion_policy](https://github.com/real-stanford/diffusion_policy)  
 - Works effectively in this [paper](https://www.arxiv.org/pdf/2506.16211). Case2: use 30 trajectories to train the model, train 30 hours on 4090 gpu and get high success rate.
 
-
+---
 
 ### SmolVLA
 
 - **Paper**: https://arxiv.org/abs/2506.01844
 - Successfully tested 450M checkpoint on Lerobot SO101 for real-world fork picking tasks. Training parameters: batch size 12, 4.1GB VRAM usage, converges between 3,000-27,000 steps.
 
+---
 
 ### GR00T N1.5
 
@@ -73,8 +73,14 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 - **Notes**: using 3B LLM, flow matching DiT action head.
 - **Github**: https://github.com/NVIDIA/Isaac-GR00T
 
-
 ---
+
+### UniVLA
+
+- **Paper**: https://arxiv.org/pdf/2505.06111
+- **Status**: ✅ Successfully reproduced the results in the paper
+- **Github**: https://github.com/OpenDriveLab/UniVLA 
+
 
 *Note: There are hundreds of VLA models available. This list focuses on models that I have personally tested or for which reproduction results have been reported somewhere.*
 
@@ -151,12 +157,17 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 - **Notes**: 1.7TB dataset of 1000+ teleop sessions with 100+ unique tasks.
 
 
-### 🔄 Datasets to Try
-- **CALVIN**: 
-  - Repository: https://github.com/mees/calvin
-  - Size: ~1.1TB
-- **RoboTwin**: 
-  - Repository: https://github.com/robotwin-Platform/RoboTwin
+#### CALVIN
+- **Repository**: https://github.com/mees/calvin
+- **Size**: ~1.1TB
+
+#### RoboTwin
+- **Repository**: https://github.com/robotwin-Platform/RoboTwin
+
+#### GenieSim
+
+- **Repository**: https://github.com/AgibotTech/genie_sim
+- **Notes**: Only support docker environment. It is difficult to use. Requires to adjust ROS.
 
 
 ## Contributing
