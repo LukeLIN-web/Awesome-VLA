@@ -107,6 +107,12 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 - **RoboTwin**: 
   - Repository: https://github.com/robotwin-Platform/RoboTwin
 
+- **GenieSim**: 
+  - Repository: https://github.com/AgibotTech/genie_sim
+  - Notes: Only support docker environment. It is difficult to use. Requires to adjust ROS.
+
+- **BEHAVIOR-1K**: 
+  - Repository: https://github.com/StanfordVL/BEHAVIOR-1K
 
 ## Datasets
 
@@ -164,10 +170,9 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 #### RoboTwin
 - **Repository**: https://github.com/robotwin-Platform/RoboTwin
 
-#### GenieSim
+#### BEHAVIOR-1K
+- **Repository**: https://behavior.stanford.edu/challenge/dataset.html 
 
-- **Repository**: https://github.com/AgibotTech/genie_sim
-- **Notes**: Only support docker environment. It is difficult to use. Requires to adjust ROS.
 
 
 ## Contributing
