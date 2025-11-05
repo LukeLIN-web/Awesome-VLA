@@ -92,16 +92,17 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
   - **Reference**: https://github.com/LukeLIN-web/vote/blob/main/experiments/robot/libero/run_libero_eval.py 
 - **SimplerEnv**
   - **Enhanced Repository**: https://github.com/DelinQu/SimplerEnv-OpenVLA , This repository provides additional scripts and utilities to help you run the benchmark
-
+- **RLBench**: 
+  - Repository: https://github.com/stepjam/RLBench
+  - Notes: There are many tasks, commonly test 18 tasks, about 4GB training datasets for each task.
 - **RoboCasa**: 
   - Paper: https://arxiv.org/abs/2406.02523v1
   - Repository: https://github.com/robocasa/robocasa , https://github.com/robocasa/robocasa-gr1-tabletop-tasks 
-
-### 🔄 Benchmarks to Try
-- **RLBench**: 
-  - Repository: https://github.com/stepjam/RLBench
 - **CALVIN**: 
   - Repository: https://github.com/mees/calvin
+
+### 🔄 Benchmarks to Try
+
 - **Meta-World**: 
   - Website: https://meta-world.github.io/
 - **RoboTwin**: 
@@ -113,6 +114,9 @@ A curated list of Vision-Language-Action (VLA) models, benchmarks, and datasets 
 
 - **BEHAVIOR-1K**: 
   - Repository: https://github.com/StanfordVL/BEHAVIOR-1K
+
+- **MIKASA-Robo**:  
+  - Repository: https://sites.google.com/view/memorybenchrobots/ 
 
 ## Datasets
 
